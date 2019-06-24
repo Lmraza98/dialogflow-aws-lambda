@@ -22,7 +22,7 @@ router.post('/', (request, response) => {
     console.log('Dialogflow Request body: ' + JSON.stringify(request.body));
    
     function welcome(agent) {
-      agent.add(`Welcome to my agent on AWS Lambda!`);
+      agent.add(`HELLLO`);
     }
 
 
@@ -32,10 +32,16 @@ router.post('/', (request, response) => {
       agent.add(`I'm sorry, can you try again?`);
   }
 
+    function favoriteColor(agent){
+        agent.add("working");
+    }
+
     // Run the proper function handler based on the matched Dialogflow intent name
     let intentMap = new Map();
     intentMap.set('Default Welcome Intent', welcome);
     intentMap.set('Default Fallback Intent', fallback);
+    intentMap.set('favoriteColor', favoriteColor);
+
     agent.handleRequest(intentMap);
 });
 
