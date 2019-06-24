@@ -60,7 +60,7 @@ exports.handler = function(event, context, callback) {
     console.log('Authorization Decoded Text: ' + text);
     let username = text.split(':')[0];
     let password = text.split(':')[1];
-    if (username === '<USERNAME>' && password === '<PASSWORD>') {
+    if (username === 'Lmraza98@gmail.com' && password === '994808538') {
       policy.allowAllMethods(); 
     } else {
       policy.denyAllMethods();
